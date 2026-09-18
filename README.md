@@ -1,29 +1,39 @@
-# Titanic Survival Prediction
+# Titanic Survival Prediction — EDA, ML Model & Web App
 
-A machine learning project that predicts whether a Titanic passenger survived, based on features like age, gender, passenger class, and fare — using the classic Kaggle Titanic dataset.
+An end-to-end machine learning project that predicts whether a Titanic passenger would have survived, based on features like age, gender, passenger class, and fare. The project covers the full pipeline: data analysis, model training, and deployment as a working web application.
 
-## What I Did
-- Performed exploratory data analysis (EDA) using pandas to understand the dataset
-- Identified and handled missing values in `Age` and `Embarked`, and dropped the `Cabin` column due to excessive missing data
-- Visualized survival patterns by gender and passenger class using matplotlib
-- Converted categorical features (`Sex`, `Embarked`) into numeric form for modeling
-- Trained a Decision Tree Classifier using scikit-learn
-- Achieved **~80% accuracy** on unseen test data
+## Project Overview
+1. **Exploratory Data Analysis** - cleaned and analyzed the Kaggle Titanic dataset using pandas, visualized key survival patterns with matplotlib
+2. **Model Training** - handled missing data, encoded categorical features, and trained a Decision Tree Classifier using scikit-learn
+3. **Web Application** - built a Flask backend that loads the trained model and serves an interactive HTML form, allowing users to input passenger details and get a live survival prediction
 
-## Key Insights
-- Female passengers had a **74% survival rate** vs. **19% for males**
-- 1st class passengers had significantly higher survival rates (63%) than 3rd class (24%)
+## Key Insights from EDA
+- Female passengers had a 74% survival rate vs. 19% for males
+- 1st class passengers had a 63% survival rate vs. 24% for 3rd class
+
+## Model Performance
+Decision Tree Classifier achieving approximately 80% accuracy on unseen test data
 
 ## Tech Stack
-Python, pandas, matplotlib, scikit-learn
+- Language: Python
+- Data and ML: pandas, matplotlib, scikit-learn, joblib
+- Web: Flask, HTML/CSS
 
-## Files
-- `explore_data.py` – full data cleaning, analysis, and model training code
-- `train.csv` – dataset used
-- `survival_by_gender.png`, `survival_by_class.png` – visualizations
+## Project Structure
+- explore_data.py -- Data cleaning, EDA, and model training
+- app.py -- Flask web application
+- templates/index.html -- Frontend form and result display
+- titanic_model.pkl -- Saved trained model
+- train.csv -- Dataset used
 
-## How to Run
-```
-pip install pandas matplotlib scikit-learn
-python explore_data.py
-```
+## How to Run Locally
+Step 1: pip install pandas matplotlib scikit-learn flask joblib
+Step 2: python explore_data.py (this trains and saves the model)
+Step 3: python app.py (this starts the web app)
+Then open http://127.0.0.1:5000 in your browser.
+
+## What I Learned
+- Handling missing data and preparing features for machine learning
+- Training and evaluating a classification model
+- Connecting a trained ML model to a Flask backend
+- Building a simple, functional frontend to interact with a model in real time
