@@ -83,3 +83,8 @@ predictions = model.predict(X_test)
 # Check how accurate the model is
 accuracy = accuracy_score(y_test, predictions)
 print(f"\nModel Accuracy: {accuracy:.2%}")
+import joblib
+
+# Save the trained model to a file
+joblib.dump(model, 'titanic_model.pkl')
+print("\nModel saved as titanic_model.pkl")
